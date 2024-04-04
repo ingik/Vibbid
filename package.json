@@ -3,14 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android --scheme Vibbid",
-    "ios": "react-native run-ios --scheme Vibbid",
+    "android": "react-native run-android Vibbid",
+    "ios": "react-native run-ios --scheme Vibbid --simulator iPhone 5",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
     "@react-navigation/stack": "^6.3.29",
     "react": "18.2.0",
     "react-native": "0.73.6",
