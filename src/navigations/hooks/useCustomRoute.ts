@@ -1,7 +1,5 @@
 import { RouteProp, useRoute } from '@react-navigation/native';
-import { RootStackParamsList } from '../types';
+import { ParamsList } from '../types';
 
-export default <
-  T extends keyof R,
-  R extends RootStackParamsList = RootStackParamsList,
->() => useRoute<RouteProp<R, T>>();
+export default <T extends keyof R, R extends ParamsList<T> = ParamsList<T>>() =>
+  useRoute<RouteProp<R, T>>();

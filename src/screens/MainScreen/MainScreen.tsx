@@ -1,12 +1,24 @@
 import { useRoute } from '@react-navigation/native';
 import { FunctionComponent } from 'react';
-import { View } from 'react-native';
-import { useCustomRoute } from '../../navigations/hooks';
+import { Button, View } from 'react-native';
+import { useCustomNavigation, useCustomRoute } from '../../navigations/hooks';
 
 const MainScreen: FunctionComponent = function MainScreen() {
   const route = useCustomRoute<'Main'>();
+  const navigation = useCustomNavigation();
   console.log('props >>', route.params.propText);
-  return <View />;
+
+  const onClickButton = () => {
+    navigation.navigate('BottomTab', {
+      screen: 'Home',
+      params: { homeProp: '홈화면 prop입니다 !' },
+    });
+  };
+  return (
+    <View>
+      <Button title="바텀탭으로 !!" onPress={onClickButton} />
+    </View>
+  );
 };
 
 export default MainScreen;

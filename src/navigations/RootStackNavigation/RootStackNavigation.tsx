@@ -8,7 +8,7 @@ const RootStackNavigation: FunctionComponent = function RootStackNavigation() {
   const Stack = createNativeStackNavigator<RootStackParamsList>();
 
   return (
-    <Stack.Navigator initialRouteName="BottomTab">
+    <Stack.Navigator initialRouteName="Access">
       <Stack.Screen component={AccessScreen} name="Access" />
       <Stack.Screen component={MainScreen} name="Main" />
       <Stack.Screen component={BottomTabNavigation} name="BottomTab" />
