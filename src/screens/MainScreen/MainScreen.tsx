@@ -11,9 +11,10 @@ const MainScreen: FunctionComponent = function MainScreen() {
   const onClickButton = () => {
     navigation.navigate('BottomTab', {
       screen: 'Home',
-      params: { homeProp: '홈화면 prop입니다 !' },
+      params: { homeProp: 'home prop 입니다.' },
     });
   };
+
   return (
     <View>
       <Button title="바텀탭으로 !!" onPress={onClickButton} />

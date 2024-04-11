@@ -23,7 +23,7 @@ export type separateNavigationProp =
 export type RootStackScreenProps<T extends keyof RootStackParamsList> =
   StackScreenProps<RootStackParamsList, T>;
 
-export type BottomTabComScreenProps<T extends keyof BottomTabParamsList> =
+export type CompositeBottomTabScreenProps<T extends keyof BottomTabParamsList> =
   CompositeScreenProps<
     BottomTabScreenProps<BottomTabParamsList, T>,
     RootStackScreenProps<keyof RootStackParamsList>
@@ -32,3 +32,9 @@ export type BottomTabComScreenProps<T extends keyof BottomTabParamsList> =
 export type ParamsList<T> = T extends keyof RootStackParamsList
   ? RootStackParamsList
   : BottomTabParamsList;
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamsList {}
+  }
+}

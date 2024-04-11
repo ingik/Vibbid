@@ -1,11 +1,10 @@
 import { FunctionComponent } from 'react';
 import { AccessScreen, MainScreen } from '../../screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RootStackParamsList } from '../types';
 import { BottomTabNavigation } from '..';
 
 const RootStackNavigation: FunctionComponent = function RootStackNavigation() {
-  const Stack = createNativeStackNavigator<RootStackParamsList>();
+  const Stack = createNativeStackNavigator();
 
   return (
     <Stack.Navigator initialRouteName="Access">

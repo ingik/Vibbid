@@ -14,8 +14,6 @@ import {
 import { RootStackParamsList } from './src/navigations/types';
 
 function App(): React.JSX.Element {
-  const navigationRef =
-    createNavigationContainerRef<keyof RootStackParamsList>();
   return (
     <NavigationContainer>
       <AppContents />
