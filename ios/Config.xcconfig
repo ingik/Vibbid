@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  Vibbid
+//
+//  Created by 권궁 on 2024/04/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include? "tmp.xcconfig"
