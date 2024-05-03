@@ -2,15 +2,13 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+
 project.ext.envConfigFiles = [
-        developmentdebug: ".env",
-        developmentrelease: ".env",
+        developmentdebug: ".env.development",
+        developmentrelease: ".env.development",
         productiondebug: ".env.production",
         productionrelease: ".env.production"
 ]
-
-
-
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
@@ -93,9 +91,13 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    flavorDimensions "flavors"
     productFlavors{
-        production {}
+        production {
+            manifestPlaceholders = [appName: "APPNAME"]
+        }
         development {
+            manifestPlaceholders = [appName: "DEV-APPNAME"]
             applicationIdSuffix ".dev"
         }
     }
